@@ -1,0 +1,2 @@
+1. Apply abstraction for icache and the counter in icache
+2. Reuse the verification framework of piccolo
