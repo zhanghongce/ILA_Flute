@@ -1496,10 +1496,12 @@ module mkMMU_Cache(CLK,
 	     rg_cset_cword_in_cache[2:0] != 3'd7 ||
 	     WILL_FIRE_RL_rl_start_cache_refill ;
 
+  (* keep *) wire [5:0] MUX_rg_cset_in_cache$write_1__VAL_1_any_val;
+
   // register rg_cset_in_cache
   assign rg_cset_in_cache$D_IN =
 	     WILL_FIRE_RL_rl_reset ?
-	       MUX_rg_cset_in_cache$write_1__VAL_1 :
+	       MUX_rg_cset_in_cache$write_1__VAL_1_any_val : // MUX_rg_cset_in_cache$write_1__VAL_1 :
 	       6'd0 ;
   assign rg_cset_in_cache$EN =
 	     WILL_FIRE_RL_rl_reset || WILL_FIRE_RL_rl_start_reset ;
