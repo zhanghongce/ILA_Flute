@@ -118,4 +118,3 @@
     "(#monitor_s2# |-> (RTL.near_mem$dmem_exc == 0))" // no memory exception, not in this model
   ]
 }
-
